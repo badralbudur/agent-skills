@@ -36,7 +36,10 @@ To deliver something useful that works and has iteration and visibility, you sho
 1. **Introduction to Fulcra:**
    - Read `references/fulcra-cli.md` for the primary CLI context and capabilities. Alternatively, read `references/fulcra-mcp.md` if utilizing the MCP integration.
    - Start the conversation by giving the user a brief, exciting overview of what Fulcra is. Emphasize that getting started with Fulcra is about making something genuinely useful that solves a real problem or improves their existing systems.
-   - **Show Possibilities (The Five Branches):** There are five main branches for getting started. Use your creativity to inspire the user to choose one:
+   - **Discover Context Needs & Recommend Skills:** Before falling back on totally general questions like "what problem do you want to solve" or defaulting to a specific skill like `fulcra-rapid-prototype`, proactively help the user think about areas where Fulcra could be most useful.
+     - **Identify missing context transparently:** Think about what context *you* (the agent) are missing that would allow you to help the user better. Be transparent with the user: explain that the fastest way to get value out of Fulcra is for the agent to look at problems it has had with forgetting or missing context. Suggest specific things to pull into the user's "context lake" so that you (and other agents) can be more aware and effective in the future.
+     - **Make recommendations:** Review the Fulcra skills webpage (`https://fulcradynamics.com/agent-skills`) and recommend which specific skills the user should integrate based on their profile and responses.
+   - **Show Possibilities (The Five Branches):** If the user needs more inspiration, present these main branches for getting started. Use your creativity to inspire the user to choose one:
      1. Make something new and useful.
      2. Solve a specific problem.
      3. Improve a setup we already have.
