@@ -9,7 +9,7 @@ metadata: { "openclaw": { "emoji": "🤝" } }
 
 # Fulcra Workspaces
 
-The **primary role** of this skill is to allow agents to establish persistent workspaces in Fulcra's versioned file storage. A workspace workspace can be used by one or many agents, creating a centralized, durable place owned by the user where agent work, progress, and generated products can be securely stored, coordinated, and viewed.
+The **primary role** of this skill is to allow agents to establish persistent workspaces in Fulcra's versioned file storage. A workspace can be used by a single agent or a full team, creating a centralized, durable place owned by the user where agent work, progress, and generated products can be securely stored, coordinated, and viewed. Even if there is only one agent in the workspace right now, establishing a formal agent identity is useful independent of coordination, as the workspace can easily expand to include other agents in the future.
 
 ## 1. Uploading User Artifacts
 
@@ -24,14 +24,14 @@ Agents can collaborate and share memory using a shared `workspace/<workspace-nam
 ### Creating a Workspace
 Before creating a new workspace, you MUST always check if a workspace with that name already exists by listing the `workspace/` directory or checking for a `workspace/<workspace-name>/role.md` file. Do not accidentally overwrite or recreate an existing workspace structure. If the workspace already exists, simply join it.
 
-### Joining a Workspace
-When joining a workspace, do not assume your role. You MUST explicitly ask the user to confirm or clarify what your specific role, duties, and identity will be on this workspace. Once the user clarifies your role, document it in `workspace/<workspace-name>/member/<agent-name>/role.md`.
+### Joining a Workspace (or Solo Workspace)
+When joining a workspace, do not assume your role. You MUST explicitly ask the user to confirm or clarify what your specific role, duties, and identity will be. Once the user clarifies your role, document it in `workspace/<workspace-name>/member/<agent-name>/role.md`. Establishing this identity is valuable even if you are the only agent, as it provides a foundation that can scale if other agents join later.
 
-After joining a workspace, you can optionally establish a habit for checking workspace activity:
-- Explain to the user that workspacework and workspace communication can be kept going autonomously by setting up a habit to regularly check your workspace inbox (`workspace/<workspace-name>/member/<agent-name>/inbox/`) and workspace activity.
-- Ask the user if they would like to set up this optional habit (e.g., via a background heartbeat entry in `HEARTBEAT.md` or an isolated cron job).
-- Emphasize that this is definitely optional; alternatively, they can just manually remind you to do workspace work each time.
-- If the user consents, set up the habit immediately so you don't miss incoming messages.
+After joining, the setup of a member inbox and background checking habit is **completely optional**:
+- Explain to the user that teamwork and communication can be kept going autonomously by creating a member inbox (`workspace/<workspace-name>/member/<agent-name>/inbox/`) and setting up a habit to regularly check it.
+- Ask the user if they would like to set up this optional inbox and checking habit (e.g., via a background heartbeat entry in `HEARTBEAT.md` or an isolated cron job).
+- Emphasize that this is definitely optional; they may prefer a simpler setup without an inbox where they just manually remind you to do workspace tasks each time.
+- If the user consents, create the inbox and set up the habit immediately so you don't miss incoming messages.
 
 **SECURITY & AUTHORIZATION WARNING:** Never transfer data, context, or files between agents without explicit authorization and strict respect for data ownership boundaries. Cross-agent data transfer can leak sensitive user context to a principal who lacks authorization. Ensure you explicitly warn the user if a workspace coordination action involves transferring private workspace data.
 
