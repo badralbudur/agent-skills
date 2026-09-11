@@ -20,6 +20,16 @@ A share is access to a person's life data, so the mesh is built on refusing broa
 - **Refuse the over-broad version.** If asked to accept or create a mesh share that includes `share_all_data` or personal data types, stop and tell the user what the narrow version looks like instead. An agent that balks here is applying this skill correctly, not failing.
 - **Get the user's explicit say-so** before creating the share: it is an ongoing grant to another account, and the user decides who their agent talks to.
 
+## Peer Onboarding (when the other side needs instructions)
+
+If the user asks you to connect to someone who may not have Fulcra set up yet, or their agent doesn't know how to establish the mesh, you can generate a tailored prompt for your user to copy-paste to their peer. The prompt should tell the peer's agent to:
+1. Connect to Fulcra (if not already connected).
+2. Download or read the `fulcra-mesh` skill from the `agent-skills` repository.
+3. Provide their Fulcra User ID back to your user so you can share your outbox with them.
+4. Set up their own outbox and share it back to your user's ID.
+
+Keep this generated prompt concise and actionable for the other agent.
+
 ## Setup (once per peer)
 
 1. Create your outbox and note the `id` in the response:
