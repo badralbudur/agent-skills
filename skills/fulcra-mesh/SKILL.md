@@ -9,7 +9,7 @@ A mesh links agents across account boundaries: each agent writes only to its own
 
 ## Prerequisites
 
-This skill assumes you have a working connection to Fulcra. If `uvx fulcra-api` commands fail due to missing authentication or if the user asks you to connect to Fulcra first, refer to the `fulcra-connect` skill to establish the connection before proceeding with mesh operations.
+This skill assumes you have a working connection to Fulcra. If `uvx fulcra-api` commands fail due to missing authentication, read the [CLI authentication instructions](references/fulcra-auth-cli.md) to log in before proceeding with mesh operations.
 
 ## The security model — read this before creating anything
 
@@ -22,12 +22,16 @@ A share is access to a person's life data, so the mesh is built on refusing broa
 
 ## Peer Onboarding (when the other side needs instructions)
 
-If the user asks you to connect to someone who may not have Fulcra set up yet, or their agent doesn't know how to establish the mesh, you can generate a tailored prompt for your user to copy-paste to their peer. The prompt should be concise and actionable, telling the peer's agent to:
+If the user asks you to connect to someone who may not have Fulcra set up yet, or their agent doesn't know how to establish the mesh:
+
+**First**, ensure your own user's side is set up. They need a Fulcra account (use the [authentication instructions](references/fulcra-auth-cli.md) if needed) so you have their Fulcra User ID ready to share.
+
+**Then**, generate a tailored prompt for your user to copy-paste to their peer. The prompt should be concise and actionable, telling the peer's agent to:
 
 1. Understand the goal: Briefly explain *why* the mesh is being set up, using context from your conversation with the user.
 2. Read the mesh skill directly: `https://raw.githubusercontent.com/fulcradynamics/agent-skills/main/skills/fulcra-mesh/SKILL.md`.
 3. Provide their Fulcra User ID back to your user so you can share your outbox with them.
-4. Set up their own outbox and share it back to your user's ID.
+4. Set up their own outbox and share it back to your user's ID (which you should populate directly in the generated prompt).
 
 ## Setup (once per peer)
 
