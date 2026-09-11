@@ -24,14 +24,16 @@ A share is access to a person's life data, so the mesh is built on refusing broa
 
 If the user asks you to connect to someone who may not have Fulcra set up yet, or their agent doesn't know how to establish the mesh, guide them step-by-step to avoid overwhelming them:
 
-**First**, ensure your own user's side is set up. They need a Fulcra account (use the [authentication instructions](references/fulcra-auth-cli.md) if needed) so you have their Fulcra User ID ready to share. If you need to run the authentication flow for the user, explain why, provide the auth link and code, and stop. Do not output the peer prompt or ask for the other user's ID until your user has successfully logged in.
+**First**, ensure your own user's side is set up. They need a Fulcra account (use the [authentication instructions](references/fulcra-auth-cli.md) if needed) so you have their Fulcra User ID ready to share. If you need to run the authentication flow for the user, explain why, provide the auth link and code, and stop. Do not output the peer prompt until your user has successfully logged in.
 
-**Then**, once your user is authenticated, generate a tailored prompt for your user to copy-paste to their peer. The prompt should be concise and actionable, telling the peer's agent to:
+**Then**, to avoid forcing the humans to manually copy-paste IDs back and forth, generate a tailored prompt for your user to send to their peer. The prompt should be concise and actionable, telling the peer's agent to:
 
 1. Understand the goal: Briefly explain *why* the mesh is being set up, using context from your conversation with the user.
 2. Read the mesh skill directly: `https://raw.githubusercontent.com/fulcradynamics/agent-skills/main/skills/fulcra-mesh/SKILL.md`.
-3. Provide their Fulcra User ID back to your user so you can share your outbox with them.
-4. Set up their own outbox and share it back to your user's ID (which you should populate directly in the generated prompt).
+3. Set up their own outbox and share it to your user's ID (which you should populate directly in the generated prompt).
+4. Write an initial handshake message to their new outbox containing a specific, identifiable phrase (e.g., "mesh-handshake: wanting to schedule dinner") **and** their own Fulcra User ID in the body.
+
+**Finally**, let your user know you will watch for that incoming share. You can periodically check `uvx fulcra-api share list-incoming`, read the records of any new outboxes, and extract the peer's User ID from the handshake message. Once you have it, automatically set up your outbox and share it back to complete the mesh!
 
 ## Setup (once per peer)
 
