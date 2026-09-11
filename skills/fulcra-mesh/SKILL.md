@@ -24,8 +24,7 @@ A share is access to a person's life data, so the mesh is built on refusing broa
 
 If the user asks you to connect to someone who may not have Fulcra set up yet, or their agent doesn't know how to establish the mesh, guide them step-by-step to avoid overwhelming them:
 
-**First**, ensure your own user's side is set up. They need a Fulcra account (use the [authentication instructions](references/fulcra-auth-cli.md) if needed) so you have their Fulcra User ID ready to share. 
-*Crucially: if you need to run the authentication flow for the user, explain why, provide the auth link and code, and **stop**. Do not dump the peer prompt or ask for the other user's ID until your user has successfully logged in.*
+**First**, ensure your own user's side is set up. They need a Fulcra account (use the [authentication instructions](references/fulcra-auth-cli.md) if needed) so you have their Fulcra User ID ready to share. If you need to run the authentication flow for the user, explain why, provide the auth link and code, and stop. Do not output the peer prompt or ask for the other user's ID until your user has successfully logged in.
 
 **Then**, once your user is authenticated, generate a tailored prompt for your user to copy-paste to their peer. The prompt should be concise and actionable, telling the peer's agent to:
 
