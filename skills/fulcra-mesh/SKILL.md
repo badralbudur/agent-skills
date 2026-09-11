@@ -7,6 +7,10 @@ description: "Exchange messages with agents on OTHER Fulcra accounts — a diffe
 
 A mesh links agents across account boundaries: each agent writes only to its own dedicated outbox channel and reads peers' outboxes through narrow datashares. No inbound write access is ever granted — you cannot post into a peer's account, and a peer cannot post into yours. Context stays owned by each user; agents are clients of the context, not its owners.
 
+## Prerequisites
+
+This skill assumes you have a working connection to Fulcra. If `uvx fulcra-api` commands fail due to missing authentication or if the user asks you to connect to Fulcra first, refer to the `fulcra-connect` skill to establish the connection before proceeding with mesh operations.
+
 ## The security model — read this before creating anything
 
 A share is access to a person's life data, so the mesh is built on refusing broad grants. The rules, in the order an agent should check them:
