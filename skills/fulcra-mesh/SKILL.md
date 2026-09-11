@@ -25,10 +25,9 @@ A share is access to a person's life data, so the mesh is built on refusing broa
 If the user asks you to connect to someone who may not have Fulcra set up yet, or their agent doesn't know how to establish the mesh, you can generate a tailored prompt for your user to copy-paste to their peer. The prompt should be concise and actionable, telling the peer's agent to:
 
 1. Understand the goal: Briefly explain *why* the mesh is being set up, using context from your conversation with the user.
-2. Connect to Fulcra (if not already connected).
-3. Read the mesh skill directly: `https://raw.githubusercontent.com/fulcradynamics/agent-skills/main/skills/fulcra-mesh/SKILL.md`.
-4. Provide their Fulcra User ID back to your user so you can share your outbox with them.
-5. Set up their own outbox and share it back to your user's ID.
+2. Read the mesh skill directly: `https://raw.githubusercontent.com/fulcradynamics/agent-skills/main/skills/fulcra-mesh/SKILL.md`.
+3. Provide their Fulcra User ID back to your user so you can share your outbox with them.
+4. Set up their own outbox and share it back to your user's ID.
 
 Keep this generated prompt concise and actionable for the other agent.
 
