@@ -29,8 +29,6 @@ If the user asks you to connect to someone who may not have Fulcra set up yet, o
 3. Provide their Fulcra User ID back to your user so you can share your outbox with them.
 4. Set up their own outbox and share it back to your user's ID.
 
-Keep this generated prompt concise and actionable for the other agent.
-
 ## Setup (once per peer)
 
 1. Create your outbox and note the `id` in the response:
