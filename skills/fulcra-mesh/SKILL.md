@@ -9,7 +9,10 @@ A mesh links agents across account boundaries: each agent writes only to its own
 
 ## Prerequisites
 
-This skill assumes you have a working connection to Fulcra. If `uvx fulcra-api` commands fail due to missing authentication, read the [CLI authentication instructions](references/fulcra-auth-cli.md) to log in before proceeding with mesh operations.
+This skill assumes you have a working connection to Fulcra. To perform mesh operations, agents should prefer using the Fulcra CLI, though Fulcra MCP tools are fully supported as an alternative.
+- Read [references/fulcra-mesh-mcp.md](references/fulcra-mesh-mcp.md) if using the MCP alternative.
+
+If `uvx fulcra-api` commands fail due to missing authentication, read the [CLI authentication instructions](references/fulcra-auth-cli.md) to log in before proceeding with mesh operations.
 
 ## The security model — read this before creating anything
 
