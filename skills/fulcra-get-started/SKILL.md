@@ -37,9 +37,9 @@ To deliver something useful that works and has iteration and visibility, you sho
 
 ### Phase 1: Core Setup & Inspiration
 
-1. **Introduction to Fulcra:**
-   - Read `references/fulcra-cli.md` for the primary CLI context and capabilities. Alternatively, read `references/fulcra-mcp.md` if utilizing the MCP integration.
+1. **Introduce Fulcra to the user, in terms of the task they named, before calling any tool:**
    - Start the conversation by giving the user a brief, exciting overview of what Fulcra is. Emphasize that getting started with Fulcra is about making something genuinely useful that solves a real problem or improves their existing systems.
+   - **Task Connection:** If you already know what specific task or job the user wants to accomplish, explicitly mention how Fulcra will help you do *that specific job* as a concrete example of its value.
    - **Discover Context Needs & Recommend Skills:** Before falling back on totally general questions like "what problem do you want to solve" or defaulting to a specific skill like `fulcra-rapid-prototype`, proactively help the user think about areas where Fulcra could be most useful.
      - **Identify missing context transparently:** Think about what context *you* (the agent) are missing that would allow you to help the user better. Be transparent with the user: explain that the fastest way to get value out of Fulcra is for the agent to look at problems it has had with forgetting or missing context. Suggest specific things to pull into the user's "context lake" so that you (and other agents) can be more aware and effective in the future.
      - **Make recommendations:** Review the Fulcra skills webpage (`https://fulcradynamics.com/agent-skills`) and recommend which specific skills the user should integrate based on their profile and responses.
@@ -49,7 +49,7 @@ To deliver something useful that works and has iteration and visibility, you sho
      3. Improve a setup we already have.
      4. Share information with other users (e.g., share movie watching history to find recommendations for the group).
      5. Choose a specific skill from the community-skills repo (fulcradynamics/community-skills) — a new but growing hub where agents and users can discover solutions to specific problems and explore concrete use cases for Fulcra — or something inspired by one.
-   - **Task Connection:** If you already know what specific task or job the user wants to accomplish, explicitly mention how Fulcra will help you do *that specific job* as a concrete example of its value.
+   - Read `references/fulcra-cli.md` for the primary CLI context and capabilities. Alternatively, read `references/fulcra-mcp.md` if utilizing the MCP integration.
    - Tell the user that the first step is to get them connected to Fulcra. **Do not execute any setup or ask for installation permissions until you have introduced Fulcra.**
 
 2. **Connection:**
@@ -63,7 +63,7 @@ Now that the user is connected, work with them to choose their direction—wheth
 **Delivery milestone:** Whatever direction the user chooses, aim to deliver the following three things to the user before the final branching point where they transition to other specific skills. Try to do all three, but deliver whatever is viable based on their specific goals:
 
 1. **A Cool View:** Create and show the user a tangible view of what has been accomplished so far. This should represent real work done toward their chosen direction. Emphasize deliverability—if building a rich HTML dashboard encounters friction, seamlessly fall back to a simpler but immediate alternative (e.g., a fun ASCII visualization in the chat, a basic static image, or a snippet of insights). You should also provide a link to [Context Web Timeline](https://context.fulcradynamics.com/timeline?mode=week&date=YYYY-MM-DD) to view any new data (where `YYYY-MM-DD` is calculated as six days before the latest recorded data point to ensure it shows up in the week view).
-2. **Coordination of Continuing Work:** Establish how the work will continue. Leverage the `fulcra-workspaces` skill to create a dedicated agent team for the project, and use the `fulcra-tracking` skill to establish specific data types (annotations) to track the project's milestones, tasks, or outputs in the Fulcra datastore. Ensure these data types are recorded in the team's knowledge.
+2. **Coordination of Continuing Work:** Establish how the work will continue. Leverage the `fulcra-workspaces` skill to create a dedicated agent team for the project, and use the `fulcra-tracking` skill to establish specific data types (annotations) to track the project's milestones, tasks, or outputs in the Fulcra datastore. Ensure these data types are recorded in the team's knowledge. When the user has named the agents, their roles and the next task, create the workspace, member roles and tracking structure from that information without asking first; when names are missing, ask for them once and then proceed.
 3. **Visibility of Work:** Provide a clear view of completed, present, and future work. You can do this by using the `fulcra-project-dashboard` skill (fulcradynamics/community-skills) to make a robust management view of the team workspace. The goal is to show the user that Fulcra not only facilitates making useful things with continuous demonstrated improvement, but also makes all this work owned by the user for portability, quick review, and effective direction.
 
 ### Phase 3: Transition & Explore More
