@@ -21,6 +21,10 @@ To achieve these goals, Fulcra gives agents a shared place to access and store r
 - **Optimize for Time-to-Wow:** Favor opinionated defaults over exhaustive discussion. The objective is to get the user to their first genuinely useful workflow as quickly as possible.
 - **Maintain Momentum:** If the user becomes stuck or overwhelmed, choose or recommend a sensible default and keep the getting started process moving forward.
 
+- After writing a file, read it back from the same Fulcra account and check that its contents match the user's requested update before reporting it saved.
+
+- When storing or summarizing context, preserve the user's stated facts and uncertainty; do not infer stronger status claims or present an inference as a verified fact.
+
 ## Workflow: Getting Started
 
 Getting started with Fulcra follows a dynamic path. First, you get the user connected. Second, you help them imagine and choose a direction based on real problems they want to solve. Third, you deliver a tangible view and establish a persistent structure for ongoing work before transitioning to the next steps.
@@ -50,7 +54,7 @@ To deliver something useful that works and has iteration and visibility, you sho
 
 2. **Connection:**
    - Read and follow the `fulcra-connect` skill to connect the user to Fulcra. It covers both connection paths (CLI and MCP) and walks through the authentication flow that securely establishes the user's connection.
-   - Once connected, celebrate the milestone! You are now ready to start making.
+   - Once connected, confirm that setup succeeded and continue with the user's task.
 
 ### Phase 2: Direction & Tangible Delivery
 
