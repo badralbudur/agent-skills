@@ -13,6 +13,7 @@ This skill assumes you have a working connection to Fulcra. To perform mesh oper
 - Read [references/fulcra-mesh-mcp.md](references/fulcra-mesh-mcp.md) if using the MCP alternative.
 
 If `uvx fulcra-api` commands fail due to missing authentication, read the [CLI authentication instructions](references/fulcra-auth-cli.md) to log in before proceeding with mesh operations.
+If using the MCP server and it is not yet configured, read the [MCP setup instructions](https://docs.fulcradynamics.com/agent-get-started.txt) to connect it.
 
 ## The security model — read this before creating anything
 
@@ -32,9 +33,9 @@ If the user asks you to connect to someone who may not have Fulcra set up yet, o
 **Then**, to avoid forcing the humans to manually copy-paste IDs back and forth, generate a tailored prompt for your user to send to their peer. The prompt should be concise and actionable, telling the peer's agent to:
 
 1. Understand the goal: Briefly explain *why* the mesh is being set up, using context from your conversation with the user.
-2. Read the mesh skill directly: `https://raw.githubusercontent.com/fulcradynamics/agent-skills/main/skills/fulcra-mesh/SKILL.md`.
-3. Set up their own outbox and share it to your user's ID (which you should populate directly in the generated prompt).
-4. Write an initial handshake message to their new outbox containing a specific, identifiable phrase (e.g., "mesh-handshake: wanting to schedule dinner") **and** their own Fulcra User ID in the body.
+2. Read the mesh skill directly from its absolute URL: `https://raw.githubusercontent.com/fulcradynamics/agent-skills/main/skills/fulcra-mesh/SKILL.md`.
+3. Set up their own outbox and share it back to your user's ID (which you **must explicitly populate in the generated prompt** so the peer agent knows who to share with).
+4. Write an initial handshake message to their new outbox containing a specific, identifiable phrase (e.g., "mesh-handshake: wanting to schedule dinner") **and** their own Fulcra User ID in the body (so you can find their ID when you read the handshake).
 
 **Finally**, let your user know you will watch for that incoming share. You can periodically check `uvx fulcra-api share list-incoming`, read the records of any new outboxes, and extract the peer's User ID from the handshake message. Once you have it, automatically set up your outbox and share it back to complete the mesh!
 
