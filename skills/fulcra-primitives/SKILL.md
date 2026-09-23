@@ -128,7 +128,7 @@ uv tool run fulcra-api data-type create BooleanAnnotation "Build Passed" --descr
 uv tool run fulcra-api data-type create NumericAnnotation "Tokens Consumed" --description "Number of LLM tokens used"
 
 # Create a scale annotation
-uv tool run fulcra-api data-type create ScaleAnnotation "Task Complexity" --description "1-5 scale of task difficulty"
+uv tool run fulcra-api data-type create ScaleAnnotation "Task Complexity" --description "1-5 scale of task difficulty" -s "Trivial" -s "Easy" -s "Medium" -s "Hard" -s "Extreme"
 ```
 
 The `create` command will output the JSON definition of the new data type. Make sure to capture the returned `"id"` value (e.g., `com.fulcradynamics.annotation.12345`), as you will need it to record data against this schema.
