@@ -105,9 +105,10 @@ uv tool run fulcra-api data-type create <BASE_DATA_TYPE> "<NAME>" --description 
 ```
 
 ### Base Data Types
-Run `uv tool run fulcra-api catalog --base-types-only` to see the exact IDs of the base types you can build upon.
+Run `uv tool run fulcra-api catalog --base-types --recordable` to see the exact IDs of the recordable base types you can build upon.
 The most common base types for custom tracking are:
 *   `MomentAnnotation`: For tracking occurrences of an event without a specific measurement (e.g., "Took Medication").
+*   `DurationAnnotation`: For tracking an event that occurs over a period of time (e.g., "Reading a book").
 *   `NumericAnnotation`: For tracking a specific quantity or number (e.g., "Cups of Coffee").
 *   `BooleanAnnotation`: For tracking simple Yes/No or True/False states (e.g., "Did I go to the gym?").
 *   `ScaleAnnotation`: For 1-5 scales (e.g., mood, pain, intensity).
@@ -116,6 +117,9 @@ The most common base types for custom tracking are:
 ```bash
 # Create a simple moment annotation
 uv tool run fulcra-api data-type create MomentAnnotation "Daily Walk" --description "Went for a walk today"
+
+# Create a duration annotation
+uv tool run fulcra-api data-type create DurationAnnotation "Reading Session" --description "Time spent reading"
 
 # Create a boolean annotation
 uv tool run fulcra-api data-type create BooleanAnnotation "Ate Breakfast" --description "Did I eat breakfast?"
